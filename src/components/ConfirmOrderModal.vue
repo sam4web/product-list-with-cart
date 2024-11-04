@@ -12,14 +12,14 @@ const { productsInCart, totalOrderPrice } = storeToRefs(productStore)
   <section
     class="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-20 max-w-lg w-full"
   >
-    <div class="bg-rose-50 rounded-xl shadow-md p-7 space-y-6">
+    <div class="bg-white rounded-xl shadow-md p-7 space-y-6">
       <img :src="confirmIcon" alt="confirm-icon" class="size-12" />
       <div class="space-y-2">
         <h1 class="font-bold text-4xl">Order Confirmed</h1>
         <h4 class="text-rose-500 text-base">We hope you enjoy your food!</h4>
       </div>
 
-      <div class="bg-rose-100 p-6 rounded-xl space-y-6">
+      <div class="bg-rose-50 p-6 rounded-xl space-y-6">
         <ul class="space-y-5">
           <li v-for="product in productsInCart" :key="product.id">
             <div class="flex-between mb-5">

@@ -12,9 +12,7 @@ const { productsInCart, countProductsInCart, totalOrderPrice } =
 </script>
 
 <template>
-  <section
-    class="bg-rose-50 h-fit space-y-7 lg:space-y-10 rounded-xl px-6 py-8"
-  >
+  <section class="bg-white h-fit space-y-7 lg:space-y-10 rounded-xl px-6 py-8">
     <h2 class="text-red font-bold text-3xl">
       Your Cart ({{ countProductsInCart }})
     </h2>

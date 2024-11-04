@@ -37,7 +37,7 @@ const productStore = useProductStore()
       >
         <button
           v-if="!product.quantity"
-          class="btn bg-rose-50 flex-center gap-3 group"
+          class="btn bg-white flex-center gap-3 group"
           @click="productStore.increaseQuantity(product.id)"
         >
           <img :src="addToCartIcon" alt="cart-icon" class="size-7" />
