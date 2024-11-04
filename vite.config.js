@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/product-list-with-cart/',
   plugins: [vue()],
   server: {
     port: 3000,
