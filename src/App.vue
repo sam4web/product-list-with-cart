@@ -15,7 +15,7 @@ onMounted(() => productStore.setProducts(products))
 <template>
   <main
     :class="showConfirmOrderModal && 'order-model-overlay'"
-    class="px-5 py-9 sm:p-14 lg:p-20 xl:py-24 xl:px-28 relative"
+    class="w-screen min-h-screen px-5 py-9 sm:p-14 lg:p-20 xl:py-24 xl:px-28 relative"
   >
     <ConfirmOrderModal v-if="showConfirmOrderModal" />
 
