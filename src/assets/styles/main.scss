@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    transition: all 130ms linear;
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply font-body bg-rose-100;
+  }
+
+  img {
+    @apply w-full h-auto object-cover;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply border border-red py-2.5 w-44 rounded-full;
+  }
+
+  .icon-btn {
+    @apply border border-rose-50 rounded-full flex-center p-1 size-6;
+
+    & > img {
+      @apply w-5;
+    }
+  }
+}
