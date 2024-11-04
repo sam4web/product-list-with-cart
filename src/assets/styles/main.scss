@@ -14,7 +14,7 @@
   }
 
   body {
-    @apply font-body bg-rose-100;
+    @apply font-body bg-rose-50;
   }
 
   img {
@@ -44,7 +44,7 @@
       @apply w-5;
     }
   }
-  
+
   .order-model-overlay::after {
     @apply content-[''] size-full bg-black bg-opacity-50 z-10 absolute left-0 top-0;
   }
