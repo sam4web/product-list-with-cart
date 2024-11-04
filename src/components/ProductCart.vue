@@ -35,11 +35,11 @@ const { productsInCart, countProductsInCart, totalOrderPrice } =
                 {{ product.name }}
               </h3>
               <div class="space-x-3">
-                <span class="font-semibold text-red">
+                <span class="font-semibold text-lg text-red">
                   {{ product.quantity }}x
                 </span>
                 <span class="text-rose-500 font-normal">
-                  @ ${{ formatPrice(product.price) }}
+                  @${{ formatPrice(product.price) }}
                 </span>
                 <span class="text-rose-500 font-semibold">
                   ${{ formatPrice(product.total) }}
@@ -71,7 +71,7 @@ const { productsInCart, countProductsInCart, totalOrderPrice } =
 
       <button
         class="btn py-3.5 bg-red text-rose-50 w-full font-medium"
-        @click=""
+        @click="productStore.confirmOrder"
       >
         Confirm Order
       </button>

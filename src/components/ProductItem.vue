@@ -36,7 +36,7 @@ const productStore = useProductStore()
         class="w-full flex-center absolute -bottom-6 left-1/2 -translate-x-1/2"
       >
         <button
-          v-if="product.quantity <= 0"
+          v-if="!product.quantity"
           class="btn bg-rose-50 flex-center gap-3 group"
           @click="productStore.increaseQuantity(product.id)"
         >

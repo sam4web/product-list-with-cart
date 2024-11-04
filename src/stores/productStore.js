@@ -5,6 +5,7 @@ export const useProductStore = defineStore('product', {
   state: () => ({
     products: [],
     productsInCart: [],
+    showConfirmOrderModal: false,
   }),
   getters: {
     countProductsInCart() {
@@ -18,7 +19,6 @@ export const useProductStore = defineStore('product', {
     findProductById(productId) {
       return this.products.find(product => product.id === productId)
     },
-
     setProducts(products) {
       this.products = products.map(product => ({
         ...product,
@@ -31,7 +31,6 @@ export const useProductStore = defineStore('product', {
       const selectedProductInCart = this.productsInCart.find(
         product => product.id === productId,
       )
-
       // check if product exists in cart, is no add product to cart
       if (!selectedProductInCart) {
         this.productsInCart.push({
@@ -40,15 +39,13 @@ export const useProductStore = defineStore('product', {
         })
         return
       }
-
       // remove item from cart is quantity is 0
-      if (product.quantity <= 0) {
+      if (!product.quantity) {
         this.productsInCart = this.productsInCart.filter(
           product => product.id !== productId,
         )
         return
       }
-
       // update quantity and total price of product in cart
       selectedProductInCart.quantity = product.quantity
       selectedProductInCart.total = product.quantity * product.price
@@ -69,6 +66,19 @@ export const useProductStore = defineStore('product', {
       this.productsInCart = this.productsInCart.filter(
         product => product.id !== productId,
       )
+    },
+    confirmOrder() {
+      if (!this.countProductsInCart) return
+      this.showConfirmOrderModal = true
+    },
+
+    startNewOrder() {
+      this.products = this.products.map(product => ({
+        ...product,
+        quantity: 0,
+      }))
+      this.productsInCart = []
+      this.showConfirmOrderModal = false
     },
   },
 })
